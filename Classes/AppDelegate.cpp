@@ -1,5 +1,7 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+#include "RootScene.h"
+#include "PersonalDef.h"// resolutionSizeWin32 in here
+#include "GlobalSetting.h"
 
 // #define USE_AUDIO_ENGINE 1
 // #define USE_SIMPLE_AUDIO_ENGINE 1
@@ -18,10 +20,8 @@ using namespace CocosDenshion;
 
 USING_NS_CC;
 
-static cocos2d::Size designResolutionSize = cocos2d::Size(480, 320);
-static cocos2d::Size smallResolutionSize = cocos2d::Size(480, 320);
-static cocos2d::Size mediumResolutionSize = cocos2d::Size(1024, 768);
-static cocos2d::Size largeResolutionSize = cocos2d::Size(2048, 1536);
+static cocos2d::Size resolutionSizeDesign = cocos2d::Size(720, 1280);
+// resolutionSizeWin32 in PersonalDef.h
 
 AppDelegate::AppDelegate()
 {
@@ -59,7 +59,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     if(!glview) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-        glview = GLViewImpl::createWithRect("KNStrike", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
+        glview = GLViewImpl::createWithRect("KNStrike", cocos2d::Rect(0, 0, resolutionSizeWin32.width, resolutionSizeWin32.height));
+		//glview = GLViewImpl::createWithFullScreen("KNStrike");
 #else
         glview = GLViewImpl::create("KNStrike");
 #endif
@@ -73,28 +74,28 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0f / 60);
 
     // Set the design resolution
-    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
-    auto frameSize = glview->getFrameSize();
-    // if the frame's height is larger than the height of medium size.
-    if (frameSize.height > mediumResolutionSize.height)
-    {        
-        director->setContentScaleFactor(MIN(largeResolutionSize.height/designResolutionSize.height, largeResolutionSize.width/designResolutionSize.width));
-    }
-    // if the frame's height is larger than the height of small size.
-    else if (frameSize.height > smallResolutionSize.height)
-    {        
-        director->setContentScaleFactor(MIN(mediumResolutionSize.height/designResolutionSize.height, mediumResolutionSize.width/designResolutionSize.width));
-    }
-    // if the frame's height is smaller than the height of medium size.
-    else
-    {        
-        director->setContentScaleFactor(MIN(smallResolutionSize.height/designResolutionSize.height, smallResolutionSize.width/designResolutionSize.width));
-    }
+    glview->setDesignResolutionSize(resolutionSizeDesign.width, resolutionSizeDesign.height, ResolutionPolicy::FIXED_HEIGHT);
+    //auto frameSize = glview->getFrameSize();
+    //// if the frame's height is larger than the height of medium size.
+    //if (frameSize.height > mediumResolutionSize.height)
+    //{        
+    //    director->setContentScaleFactor(MIN(largeResolutionSize.height/designResolutionSize.height, largeResolutionSize.width/designResolutionSize.width));
+    //}
+    //// if the frame's height is larger than the height of small size.
+    //else if (frameSize.height > smallResolutionSize.height)
+    //{        
+    //    director->setContentScaleFactor(MIN(mediumResolutionSize.height/designResolutionSize.height, mediumResolutionSize.width/designResolutionSize.width));
+    //}
+    //// if the frame's height is smaller than the height of medium size.
+    //else
+    //{        
+    //    director->setContentScaleFactor(MIN(smallResolutionSize.height/designResolutionSize.height, smallResolutionSize.width/designResolutionSize.width));
+    //}
 
     register_all_packages();
 
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+    auto scene = Root::create();
 
     // run
     director->runWithScene(scene);
