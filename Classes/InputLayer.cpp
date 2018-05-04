@@ -25,6 +25,12 @@ bool Input::init()
 	return true;
 }
 
+
+bool Input::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* e)
+{
+	return true;
+}
+
 void Input::onTouchMoved(Touch* touch, Event* e)
 {// empty
 }

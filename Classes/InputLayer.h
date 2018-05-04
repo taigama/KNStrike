@@ -29,7 +29,8 @@ private:
 
 	// --------- touch -----------
 public:
-	void onTouchMoved(cocos2d::Touch*, cocos2d::Event*) override;
+	bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* e) override;
+	void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* e) override;
 	/**
 	 * \this will be called when you ended touch 
 	 * \param touch the touch of the event 

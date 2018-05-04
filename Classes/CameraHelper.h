@@ -35,9 +35,9 @@ public:
 	CC_SYNTHESIZE_READONLY(cocos2d::Vec2, _pos, Position);
 
 
-private:
 	CameraHelper();
 	~CameraHelper();
+private:
 
 	cocos2d::Camera* m_camera;
 

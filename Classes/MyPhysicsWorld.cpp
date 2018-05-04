@@ -7,6 +7,8 @@ bool MyPhysicsWorld::init()
 	if (!Node::init())
 		return  false;
 
+	m_velocityIteration = 8;
+	m_positionIteration = 3;
 	scheduleUpdate();
 	m_world = new b2World(b2Vec2(0.0f, GRAVITY));
 	return true;
@@ -20,7 +22,7 @@ void MyPhysicsWorld::update(float dt)
 
 					// Có thể hiểu thế này, mỗi Step xảy ra trong dt giây , dt này trong file AppDelegate.cpp định nghĩa = dòng lệnh director->setAnimationInterval(1.0 / 60); Bạn thử thay 1/60 = 1/1 xem, rơi cực chậm theo từng giây
 
-	m_world->Step(dt, _velocityIteration, _positionIteration);
+	m_world->Step(dt, m_velocityIteration, m_positionIteration);
 
 	// Duyệt tất cả body của world
 	for (b2Body *body = m_world->GetBodyList(); body != NULL; body = body->GetNext())

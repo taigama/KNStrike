@@ -56,5 +56,4 @@ public:
 
 template <class T>
 T* SingleInstance<T>::_instance = nullptr;
-
 #endif//__SINGLETON_H__

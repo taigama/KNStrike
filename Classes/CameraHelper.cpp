@@ -1,7 +1,5 @@
 #include "CameraHelper.h"
 
-#include "World.h"
-#include "ResourceManager.h"
 
 USING_NS_CC;
 

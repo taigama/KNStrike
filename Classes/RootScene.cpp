@@ -26,6 +26,8 @@ bool Root::init()
 
 void Root::InitBase(float)
 {
+	CameraHelper::GetInstance();
+
 	m_inputLayer = Input::create();
 	this->addChild(m_inputLayer);
 	m_physics = MyPhysicsWorld::create();
@@ -37,7 +39,6 @@ void Root::InitBase(float)
 	m_frameCleaner = FrameCleaner::create();
 	this->addChild(m_frameCleaner);
 
-	CameraHelper::GetInstance();
 	ResourceManager::GetInstance();
 	MyPoolManager::GetInstance();
 

@@ -1,4 +1,5 @@
 #include "HUD.h"
+#include "CameraHelper.h"
 
 bool HUD::init()
 {
@@ -14,5 +15,16 @@ bool HUD::init()
 
 void HUD::InitAfter(float)
 {
+	SetFollowCamera();	
+}
 
+void HUD::SetFollowCamera()
+{
+	schedule(CC_SCHEDULE_SELECTOR(HUD::FollowCamera));
+}
+
+
+void HUD::FollowCamera(float delta)
+{
+	this->setPosition(CameraHelper::GetInstance()->getPosition());
 }

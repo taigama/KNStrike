@@ -12,7 +12,11 @@ class HUD : public cocos2d::Node, public SingleInstance<HUD>
 
 	// this function show loading screen, and schedule InitTruly
 	bool init() override;
+
+protected:
+	void SetFollowCamera();
 public:
+	void FollowCamera(float);
 
 	// initialize object
 	void InitAfter(float);
