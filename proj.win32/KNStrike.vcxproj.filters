@@ -72,6 +72,12 @@
     <ClCompile Include="..\Classes\SingleTon.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MainHUD.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PlayHUD.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -138,6 +144,12 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\HUD.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainHUD.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlayHUD.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

@@ -162,8 +162,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\HUD.cpp" />
     <ClCompile Include="..\Classes\InputLayer.cpp" />
     <ClCompile Include="..\Classes\MainGame.cpp" />
+    <ClCompile Include="..\Classes\MainHUD.cpp" />
     <ClCompile Include="..\Classes\MyPoolManager.cpp" />
     <ClCompile Include="..\Classes\MyPhysicsWorld.cpp" />
+    <ClCompile Include="..\Classes\PlayHUD.cpp" />
     <ClCompile Include="..\Classes\ResourceManager.cpp" />
     <ClCompile Include="..\Classes\RootScene.cpp" />
     <ClCompile Include="..\Classes\SingleTon.cpp" />
@@ -184,10 +186,12 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\HUD.h" />
     <ClInclude Include="..\Classes\InputLayer.h" />
     <ClInclude Include="..\Classes\MainGame.h" />
+    <ClInclude Include="..\Classes\MainHUD.h" />
     <ClInclude Include="..\Classes\MyPoolManager.h" />
     <ClInclude Include="..\Classes\NodeFreezer.h" />
     <ClInclude Include="..\Classes\PersonalDef.h" />
     <ClInclude Include="..\Classes\MyPhysicsWorld.h" />
+    <ClInclude Include="..\Classes\PlayHUD.h" />
     <ClInclude Include="..\Classes\ResourceManager.h" />
     <ClInclude Include="..\Classes\RootScene.h" />
     <ClInclude Include="..\Classes\SingleTon.h" />
