@@ -5,7 +5,14 @@
 
 class MainHUD : public HUD
 {
+protected:
+	bool init() override;
 
+public:
+	MainHUD();
+	~MainHUD();
+
+	CREATE_FUNC(MainHUD);
 
 };
 

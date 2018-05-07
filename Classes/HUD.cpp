@@ -10,12 +10,9 @@ bool HUD::init()
 		return false;
 	}
 
-	return true;
-}
+	SetFollowCamera();
 
-void HUD::InitAfter(float)
-{
-	SetFollowCamera();	
+	return true;
 }
 
 void HUD::SetFollowCamera()

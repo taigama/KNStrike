@@ -1,5 +1,5 @@
 #include "InputLayer.h"
-
+#include "PlayHUD.h"
 USING_NS_CC;
 
 #ifdef ENABLE_KEY_INPUT
@@ -32,7 +32,9 @@ bool Input::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* e)
 }
 
 void Input::onTouchMoved(Touch* touch, Event* e)
-{// empty
+{
+	Vec2 distance = touch->getLocation() - touch->getPreviousLocation();
+	PlayHUD::GetInstance()->TouchMove(distance, touch);
 }
 
 void Input::onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* unused_event)

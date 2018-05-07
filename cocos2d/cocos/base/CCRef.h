@@ -29,7 +29,7 @@ THE SOFTWARE.
 #include "platform/CCPlatformMacros.h"
 #include "base/ccConfig.h"
 
-#define CC_REF_LEAK_DETECTION 0
+#define CC_REF_LEAK_DETECTION 1
 
 /**
  * @addtogroup base
