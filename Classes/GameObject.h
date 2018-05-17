@@ -2,12 +2,12 @@
 #define __GAME_OBJECT_H__
 
 
-#include "NodeFreezer.h"
 #include "AudioEngine.h"
 #define AUDIO experimental::AudioEngine
 
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
+#include "NodeFreezer.h"
 
 // base class of all GameObject
 class GameObject : public cocos2d::Node, public NodeFreezer<GameObject>

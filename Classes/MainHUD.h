@@ -5,6 +5,9 @@
 
 class MainHUD : public HUD
 {
+private:
+	void OnClickHahaha(cocos2d::Ref* sender);
+
 protected:
 	bool init() override;
 

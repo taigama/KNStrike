@@ -18,7 +18,7 @@ CameraHelper::CameraHelper()
 	_visSize = Director::getInstance()->getVisibleSize();
 	_origin = Director::getInstance()->getVisibleOrigin();
 
-	m_offsetY = CAMERA_BASE_OFFSET_Y / Director::getInstance()->getContentScaleFactor();
+	//m_offsetY = CAMERA_BASE_OFFSET_Y / Director::getInstance()->getContentScaleFactor();
 }
 
 Vec2 CameraHelper::ScreenToWorld(const Vec2& point)
